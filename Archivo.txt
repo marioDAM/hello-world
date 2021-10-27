@@ -1,2 +1,1 @@
-Este archivo es para comprender y manejar modificaciones desde diferentes ramas 
-Intentare añadir alguna rama
+creando archivo
