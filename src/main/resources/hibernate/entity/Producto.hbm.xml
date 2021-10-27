@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hibernate.entity">
+	<class name="Producto" table="producto">
+		<id name="id" column="id" type="integer">
+			<generator class="identity" />
+		</id>
+		<property name="codigoBarra" column="codigo_barra"
+			type="string" />
+		<property name="nombre" column="nombre" type="string" />
+		<property name="talla" column="talla" type="string" />
+		<property name="color" column="color" type="string" />
+		<property name="precio" column="precio" type="big_decimal" />
+		<property name="descuento" column="descuento"
+			type="big_decimal" />
+		<property name="usuCre" column="usu_cre" type="string" />
+		<property name="fecCre" column="fec_cre" type="timestamp" />
+		<property name="usuMod" column="usu_mod" type="string" />
+		<property name="fecMod" column="fec_mod" type="timestamp" />
+		<many-to-one name="tipoProducto" class="TipoProducto"
+			column="tipo" not-null="true" />
+		<many-to-one name="coleccion" class="Coleccion"
+			column="coleccion" not-null="true" />
+		<many-to-one name="estadoProducto" class="EstadoProducto"
+			column="estado" not-null="true" />
+		<set name="pedidos" table="pedido_producto" lazy="true"
+			fetch="select" cascade="none">
+			<key column="id_producto" not-null="true" />
+			<many-to-many column="id" class="Pedido" />
+		</set>
+	</class>
+</hibernate-mapping>

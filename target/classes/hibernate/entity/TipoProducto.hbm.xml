@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hibernate.entity">
+    <class name="TipoProducto" table="tipo_producto">
+        <id name="id" column="id" type="integer">
+            <generator class="identity" />
+        </id>
+        <property name="nombre" column="nombre" type="string" />
+	<property name="usuCre" column="usu_cre" type="string" />
+        <property name="fecCre" column="fec_cre"
+            type="timestamp" />
+        <property name="usuMod" column="usu_mod" type="string" />
+        <property name="fecMod" column="fec_mod"
+            type="timestamp" />
+        <set name="productos" table="producto" inverse="true"
+            lazy="true" fetch="select">
+            <key column="tipo" not-null="true"/>
+            <one-to-many class="Producto"/>
+        </set>
+    </class>
+</hibernate-mapping>

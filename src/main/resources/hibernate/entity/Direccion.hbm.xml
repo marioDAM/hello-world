@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hibernate.entity">
+	<class name="Direccion" table="direccion">
+		<id name="id" column="id" type="integer">
+			<generator class="identity" />
+		</id>
+		<property name="idCliente" column="id_cliente" type="int"></property>
+		<property name="calle" column="calle" type="string"></property>
+		<property name="ciudad" column="ciudad" type="string"></property>
+		<property name="cp" column="cp" type="string" />
+		<property name="pais" column="pais" type="string"></property>
+		<property name="usuCre" column="usu_cre" type="string"></property>
+		<property name="fecCre" column="fec_cre" type="timestamp"></property>
+		<property name="usuMod" column="usu_mod" type="string"></property>
+		<property name="fecMod" column="fec_mod" type="timestamp"></property>
+
+		<set name="cliente" table="cliente" lazy="true" fetch="select"
+			cascade="none">
+
+			<key column="id_producto" not-null="true" />
+			<many-to-many column="id" class="Pedido" />
+		</set>
+
+	</class>
+</hibernate-mapping>

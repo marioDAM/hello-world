@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hibernate.entity">
+	<class name="Coleccion" table="coleccion">
+		<id name="id" column="id" type="integer">
+			<generator class="identity" />
+		</id>
+		<property name="nombre" column="nombre" type="string" />
+		<property name="usu_Cre" column="usu_cre" type="string"></property>
+		<property name="fec_Cre" column="fec_cre" type="timestamp"></property>
+		<property name="usu_Mod" column="usu_mod" type="string"></property>
+		<property name="fec_Mod" column="fec_mod" type="timestamp"></property>
+	</class>
+</hibernate-mapping>

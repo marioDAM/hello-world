@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hibernate.entity">
+	<class name="Cliente" table="cliente">
+		<id name="id" column="id" type="integer">
+			<generator class="identity" />
+		</id>
+		<property name="email" column="email" type="string" />
+		<property name="dni" column="dni" type="string" />
+		<property name="pass" column="pass" type="string" />
+		<property name="primerApellido" column="primer_apellido"
+			type="string" />
+		<property name="segundoApellido" column="segundo_apellido"
+			type="string" />
+		<property name="nombre" column="nombre" type="string" />
+		<property name="telefono" column="telefono" type="string" />
+		<property name="usuCre" column="usu_cre" type="string" />
+		<property name="fecCre" column="fec_cre" type="timestamp" />
+		<property name="usuMod" column="usu_mod" type="string" />
+		<property name="fecMod" column="fec_mod" type="timestamp" />
+		<set name="direccion" table="direccion" lazy="true" fetch="select"
+			cascade="none">
+			<key column="id_cliente" not-null="true" />
+			<many-to-many column="id" class="Direccion" />
+		</set>
+
+	</class>
+</hibernate-mapping>
+
+
+
