@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 Este archivo es para comprender y manejar modificaciones desde diferentes ramas 
 Intentare añadir alguna rama. Parece que me esta costando subir los cambios
+=======
+creando archivo
+>>>>>>> 8f0c1755949f6e660bfcb24cdc60b46cc5f1e557
