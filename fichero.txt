@@ -1,0 +1,12 @@
+git status
+git reset
+cd.
+erfew
+
+f
++f
+
+ww
+
+q
+
