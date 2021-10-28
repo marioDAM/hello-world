@@ -1,12 +1,4 @@
-git status
-git reset
-cd.
-erfew
+He creado el archivo lo he subido.
+Ahora lo estoy modificando, y volver a subir a la rama master
 
-f
-+f
-
-ww
-
-q
 
